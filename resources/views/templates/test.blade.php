@@ -142,7 +142,7 @@
                         <div class="col-md-7 col-md-offset-4">
                             <div class="text-right">
                             <p><a href="{{url('apprize')}}" class="btn btn-primary">อัพเดท</a></p>
-                            <p><button class="w3-btn w3-pink">Pink</button></p>
+                           <!--  <p><button class="w3-btn w3-pink">Pink</button></p> -->
                             </div>
                         </div>
                     </div>

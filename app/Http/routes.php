@@ -42,6 +42,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/profile', 'CCController@profile');
     Route::get('/test', 'CCController@test');
     Route::get('/book_queue_wash', 'CCController@book_queue_wash');
+    Route::get('/book_queue_deposit', 'CCController@book_queue_deposit');
     Route::get('/list_service', 'CCController@list_service');
     Route::get('/checkcar', 'CCController@checkcar');
     Route::get('/contact', 'CCController@contact');

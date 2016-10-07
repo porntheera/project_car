@@ -30,16 +30,20 @@ class CCController extends Controller
     public function test(){
         return view('templates.test');
     }
+    public function book_queue_deposit(){
+        return view('templates.book_queue_deposit');
+    }
     public function book_queue_wash(){
         $service = Service::where('service_name','ล้างรถ')->get();
         return view('templates.book_queue_wash',compact('service'));
     }
     public function book_queue_wash_insert(){
-        $bookqueue = new Bookqueue;
-        $bookqueue->user_id = Auth::user()->id;
-        $bookqueue->car_id = Auth::car()->id;
-        $bookqueue->comment = Request::get('comment');
-        $bookqueue->save();
+        $service_table = new ServiceTable;
+        $service_table->bookqueue_id = Auth::bookqueue()->id;
+        $service_table->service_id = Auth::service()->id
+        $service_table->save();
+        $service_table->users()->attach($users);
+        $service_table->cars()->attach($cars);
         return Redirect::to('templates.queue');
 
         // $car = new Car;
@@ -49,30 +53,16 @@ class CCController extends Controller
         // $car->save();
         // return view('templates.queue');
     }
+   
     public function book_queue_wash_save($id){
-        $bookqueue = Bookqueue::find($id);
-        $bookqueue->car_id = Auth::car()->id;
-        $bookqueue->user_id = Auth::user()->id;
-        $bookqueue->comment = Request::get('comment');
-        $bookqueue->save();
+        $service_table = ServiceTable::find($id);
+        // $service_table->bookqueue_id = Auth::bookqueue()->id;
+        // $service_table->service_id = Auth::service()->id
+        $service_table->save();
+        $service_table->users()->sync($users);
+        $service_table->cars()->sync($cars);
         return Redirect::to('templates.queue');
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

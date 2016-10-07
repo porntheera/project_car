@@ -104,9 +104,11 @@
                         </li>
                     </ul>
                 </li>
-                
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> profile <b class="caret"></b></a>
+                @if (Auth::guest())
+                @else
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ Auth::user()->Detail->name }}  <b class="caret"></b></a>
+                    
                     <ul class="dropdown-menu">
                         <li>
                             <a href="{{url('profile')}}"><i class="fa fa-fw fa-user"></i>   Profile</a>
@@ -118,6 +120,7 @@
                         </li>
                     </ul>
                 </li>
+                @endif
             </ul>
 
 

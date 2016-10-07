@@ -1,7 +1,7 @@
 @extends('carcare')
 
 @section('content')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 <script> 
  
 $(document).ready(function(){
@@ -167,7 +167,7 @@ $(document).ready(function(){
                     </div>
             </div> -->
 
-<!--             <br><div class="form-group">
+           <!--  <br><div class="form-group">
                     <label for="comment" class="control-label col-md-3">แสดงความคิดเห็น<span class="text-danger">*</span></label>
                         <div class="col-md-3">
                             <input type="text" name="comment" id="comment" value="" class="form-control">
@@ -179,9 +179,9 @@ $(document).ready(function(){
                     <div class="col-md-3 col-md-offset-3">
                         <input type="hidden" name="donthackme_please" value="645e78cc03f0ec6abb99faf6e0ecfaf0"/>
                             <button href="{{url('queue')}}" type="submit" class="btn btn-danger">บันทึก</button> 
-                            <!--  <a href="{{url('queue')}}"  class="btn btn-danger">บันทึก</a> -->
+                             <a href="{{url('queue')}}"  class="btn btn-danger">บันทึก</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-        </form>   -->
+        </form>  
 @endsection

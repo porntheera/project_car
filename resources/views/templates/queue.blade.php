@@ -47,7 +47,7 @@
                         <div class="row">
                             <div class="col-md-7 col-md-offset-5">
                                 <div class="text-right">
-                                    <p><a href="{{url('book_queue')}}" class="btn btn-success">จองคิว</a></p>
+                                    <p><a href="{{url('book_queue_deposit')}}" class="btn btn-success">จองคิว</a></p>
                                 </div>
                             </div>
                         </div>
