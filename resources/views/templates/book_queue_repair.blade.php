@@ -95,7 +95,7 @@ $(document).ready(function(){
 
         <div class="form-group">
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"> 
-                <label for="order" class="control-label col-md-3">ล้างรถ <span class="text-danger">*</span></label>
+                <label for="order" class="control-label col-md-3">รถ <span class="text-danger">*</span></label>
                     <div class="col-md-3">
                         @foreach($service as $s)
                             <input type="checkbox" name="service[]" id="service" value="{{$s->id}}"> {{$s->service_detail}} <br>

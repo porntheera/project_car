@@ -131,12 +131,17 @@
                     <!-- /.col-sm-4 -->
                
                 <div class="row">
-                    <div class="col-sm-7">                        
-                            <div class="well">
-                    <p>
-                        ระบบคาร์แคร์ยังไม่เปิดใช้บริการ ช่วงในช่วงปริบปรุงเว็บไซร์ จะใช้บริการได้อีก 1/1/2560 
-                        ขออภัยในความไม่สะดวก </p>
-                            </div>
+                    
+                    <div class="col-sm-7">
+                        <?php $i=1; ?>
+                        @foreach($data as $s)
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">ข่าวสาร {{$i}}</div>
+                            <div class="panel-body">{{$s->comment}}</div>
+                            <div class="panel-footer">{{$s->updated_at}}</div>
+                        </div>
+                        <?php $i++; ?>
+                        @endforeach                        
                     </div>
                    <div class="row">
                         <div class="col-md-7 col-md-offset-4">
@@ -147,6 +152,4 @@
                         </div>
                     </div>
                 </div>
-
-
 @endsection

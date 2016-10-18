@@ -8,7 +8,7 @@
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class='fa fa-home fa-1x'></i>  <a href="{{url('home')}}">Dashboard</a>
+                                <i class='fa fa-home fa-1x'></i>  <a href="{{url('test')}}">Dashboard</a>
                             </li>
                             <li class="active">
                                 <i class='fa fa-automobile fa-1x'></i>  Queue service
@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-10">
                           <div class="form-group">
                                 <h3 style="color:#808080"><strong>คิวที่ใช้บริการ</strong></h3>
                             </div>
@@ -45,7 +45,7 @@
     <div id="home" class="tab-pane fade in active">
       <br><h3 style="color:#8B7D7B"><strong>รับ-ฝากรถ</strong></h3>
                         <div class="row">
-                            <div class="col-md-7 col-md-offset-5">
+                            <div class="col-md-7 col-md-offset-2">
                                 <div class="text-right">
                                     <p><a href="{{url('book_queue_deposit')}}" class="btn btn-success">จองคิว</a></p>
                                 </div>
@@ -89,7 +89,7 @@
     <div id="menu1" class="tab-pane fade">
         <br><h3 style="color:#8B7D7B"><strong>ล้างรถ</strong></h3>
                         <div class="row">
-                            <div class="col-md-7 col-md-offset-5">
+                            <div class="col-md-7 col-md-offset-2">
                                 <div class="text-right">
                                     <p><a href="{{url('book_queue_wash')}}" class="btn btn-success">จองคิว</a></p>
                                 </div>
@@ -128,9 +128,9 @@
     <div id="menu2" class="tab-pane fade">
      <br><h3 style="color:#8B7D7B"><strong>ซ่อมรถ</strong></h3>
                         <div class="row">
-                            <div class="col-md-7 col-md-offset-5">
+                            <div class="col-md-7 col-md-offset-2">
                                 <div class="text-right">
-                                    <p><a href="{{url('book_queue')}}" class="btn btn-success">จองคิว</a></p>
+                                    <p><a href="{{url('book_queue_repair')}}" class="btn btn-success">จองคิว</a></p>
                                 </div>
                             </div>
                         </div>    
@@ -148,12 +148,13 @@
                                         <th>Check in</th>
                                     </tr>
                                 </thead>
-                               @foreach ($fix as $index => $books)
+                               <tbody>
+                                    @foreach ($fix as $index => $books)
                                     <tr>
                                         <td>{{$index+1}}</td>
                                         <td>{{ $books->Bookqueue->Car->plateno }}</td>
                                         <td>{{ $books->Bookqueue->Car->brand}}</td>
-                                        <td>{{ $books->Bookqueue->comment }}</td>
+                                        <td>{{ $books->Service->service_name }} {{ $books->Service->service_detail }}</td>
                                         <td>{{ $books->Bookqueue->User->Detail->name }}</td>
                                         <td>{{ $books->Bookqueue->User->Detail->tel}}</td>
                                         <td>{{ $books->Bookqueue->created_at}}</td>
@@ -164,7 +165,7 @@
                         </div>
      </div>
   </div>
-</div>
+</div></div>
 
    <center><ul class="pagination">
         <li>

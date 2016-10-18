@@ -8,7 +8,7 @@
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class='fa fa-home fa-1x'></i>  <a href="{{url('home')}}"> Dashboard</a>
+                                <i class='fa fa-home fa-1x'></i>  <a href="{{url('test')}}"> Dashboard</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-automobile fa-1x"></i> List service
@@ -53,7 +53,7 @@
 
       <div class="tab-content">
         <div id="home" class="tab-pane fade in active">
-          <div class="col-lg-12">
+          <div class="col-lg-11">
               <br> <h4 style="color:#111111"><strong>รับ-ฝากรถ</strong></h4>
                       <div class="table-responsive" style="color:#363636">
                             <table class="table table-bordered table-hover table-striped">
@@ -86,7 +86,7 @@
              </div>
         </div>
       <div id="menu1" class="tab-pane fade">    
-          <div class="col-lg-12">
+          <div class="col-lg-11">
               <br><h4 style="color:#111111"><strong>ล้างรถ</strong></h4>
                         <div class="table-responsive" style="color:#363636">
                             <table class="table table-bordered table-hover table-striped">
@@ -120,7 +120,7 @@
         </div>
 
     <div id="menu2" class="tab-pane fade">
-           <div class="col-lg-12">
+           <div class="col-lg-11">
                     <br><h4 style="color:#111111"><strong>ซ่อมรถ</strong></h4>
                         <div class="table-responsive" style="color:#363636">
                             <table class="table table-bordered table-hover table-striped">

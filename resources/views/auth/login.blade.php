@@ -6,8 +6,12 @@
         <div class="col-md-7 col-md-offset-3" >
             <div class="panel panel-default" style="margin:50px 0 20px 0;"> 
                 <div class="panel-body">    
-                    <h3 class="form-title text-right" style="color:#20B2AA"><strong>LOGIN</strong></h3>
-                    <hr>
+
+                    <h3 class="form-title text-right" style="color:#20B2AA"><strong>LOGIN</strong></h3> <hr>
+                    <center>
+                        <br><img src="dfdfdf/img/logo.gif" alt="Computer man" style="width:480px;height:250px;">
+                    </center>
+                   
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {!! csrf_field() !!}

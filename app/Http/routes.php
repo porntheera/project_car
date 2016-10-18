@@ -28,9 +28,9 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
+// Route::group(['middleware' => ['web']], function () {
+//     //
+// });
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
@@ -42,6 +42,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/profile', 'CCController@profile');
     Route::get('/test', 'CCController@test');
     Route::get('/book_queue_wash', 'CCController@book_queue_wash');
+    Route::get('/book_queue_repair', 'CCController@book_queue_repair');
     Route::get('/book_queue_deposit', 'CCController@book_queue_deposit');
     Route::get('/list_service', 'CCController@list_service');
     Route::get('/checkcar', 'CCController@checkcar');
@@ -55,5 +56,11 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/apprize', 'CCController@apprize');
     // 
     Route::post('/bookqueue/insert', 'CCController@book_queue_wash_insert');
+    Route::get('/search/phone','CCController@searchPhone');
+    //new edit
+    Route::post('/platesearch','CCController@plate_search');
+
+    //new insert
+    Route::post('newAction','CCController@News');
 });
 

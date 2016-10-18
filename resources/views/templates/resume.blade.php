@@ -9,7 +9,7 @@
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class='fa fa-home fa-1x'></i>  <a href="{{url('home')}}">Dashboard</a>
+                                <i class='fa fa-home fa-1x'></i>  <a href="{{url('test')}}">Dashboard</a>
                             </li>
                             <li class="active">
                                 <i class='fa fa-automobile fa-1x'></i>  Customer Profile
@@ -32,18 +32,20 @@
                 <br><div class="row">
                         <div class="col-sm-5">
                              <div class="text-center">
-                                <img src="/project/profilePicture/5635512141.jpg" class="bordered" width="150" height="150"><br><br>
-                                    <a href="/project/profile/updateProfile" class="btn btn-success btn-sm">Edit
-                                        Profile</a>
-                            </div>
+                                @foreach($data as $s)
+                                    <img src='{{$s->User->Detail->photo}}' class="bordered" width="200" height="200"><br><br>
+                                @endforeach
+                          </div>
                          </div>
                          <div class="col-sm-7">
         <div class="col-sm-7">
+        @foreach($data as $s)    
         <div class="row">
+
             <label class="col-sm-3">Name: </label>
 
             <div class="col-sm-9">
-                นางสาวพรธีรา คำพิมพ์            </div>
+                {{$s->User->Detail->name}}           </div>
         </div>
 
     
@@ -51,13 +53,13 @@
             <label class="col-sm-3">Tel: </label>
 
             <div class="col-sm-9">
-                0815991349            </div>
+                {{$s->User->Detail->tel}}           </div>
         </div>
          <div class="row">
             <label class="col-sm-3">Email: </label>
 
             <div class="col-sm-9">
-                <a href="mailto:looknum_pooh@hotmail.com">looknum_pooh@hotmail.com</a>
+                <a href="mailto:{{$s->User->email}}">{{$s->User->email}}</a>
             </div>
         </div>
 
@@ -65,7 +67,7 @@
             <label class="col-sm-3">Adress: </label>
 
             <div class="col-sm-9">
-                หอสวนทิพย์            
+                {{$s->User->Detail->address}}            
             </div>
         </div>
 
@@ -73,24 +75,26 @@
             <label class="col-sm-3">Car: </label>
 
             <div class="col-sm-9">
-                <p>toyota สีดำ</p>            </div>
+                <p>{{$s->brand}} {{$s->color}}</p>            </div>
         </div>
 
         <div class="row">
             <label class="col-sm-3">Plateno: </label>
 
             <div class="col-sm-9">
-                กอ670            
+                {{$s->plateno}}            
             </div>
         </div>
-
-                    <div class="row">
-                <label class="col-sm-3">List Service: </label>
-
-                <div class="col-sm-9">
-                    ฝากรถ รายเดือนสิงหาคม
-                    <br>ล้างรถ ล้างสีดูดฝุ่น 1/6/2559<br> </div>
+        <br><br>
+            <div class="panel panel-primary">
+                <div class="panel-heading">List Service:</div>
+                @foreach($datas as $d)
+                    <div class="panel-body">
+                        {{$d->service_name}} {{$d->service_detail}}
+                    </div>
+                @endforeach  
             </div>
+        @endforeach
             </div>
 </div>
 </div>

@@ -18,7 +18,7 @@
 
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <style>
         body {
             font-family: 'Lato';
@@ -29,7 +29,7 @@
         }
     </style>
 </head>
-<body id="app-layout" style="background-color:#696969" >
+<body id="app-layout" style="background-color:#000000" >
 
     <nav class="navbar navbar-default" >
         <div class="container">
@@ -51,9 +51,9 @@
 
             <div class="collapse navbar-collapse" id="spark-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
+                <!-- <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
-                </ul>
+                </ul> -->
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
@@ -80,7 +80,7 @@
 
     <!-- JavaScripts -->
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>

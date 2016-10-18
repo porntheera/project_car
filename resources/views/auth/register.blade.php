@@ -8,6 +8,9 @@
                 <div class="panel-body">    
                     <h3 class="form-title text-right" style="color:#20B2AA"><strong>Register</strong></h3>
                     <hr>
+                    <center>
+                        <br><img src="dfdfdf/img/logo.gif" alt="Computer man" style="width:480px;height:250px;">
+                    </center>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {!! csrf_field() !!}

@@ -19,6 +19,26 @@ $(document).ready(function(){
        
     });
    
+    $('#phonenumber').on('click',function(){
+        var data = $('#phoneno').val();
+        $.ajax({
+                type: 'GET',
+                url: '{{ url('search/phone') }}',
+                data: { phonenumber : data },
+                dataType: 'json',
+                success: function(result) {
+                    var $plateno = $('#plateno');
+                    $plateno.empty();
+                    $('#plate').empty();
+                    for(var i = 0; i < result.data.user.car.length; i++){
+                        $plateno.append("<option id='#plate' value="+ result.data.user.car[i].id +">"+ result.data.user.car[i].plateno +"</option>")
+                    }
+                    $('#customer_name').val(result.data.name);
+                    $('#user_id').val(result.data.user.id);
+                }
+        });
+    });
+
 });
 </script>
             <div class="row">
@@ -34,7 +54,7 @@ $(document).ready(function(){
             <ol class="breadcrumb">
                 
                 <li>
-                    <i class='fa fa-home fa-1x'></i>  <a href="{{url('home')}}">Dashboard</a>
+                    <i class='fa fa-home fa-1x'></i>  <a href="{{url('test')}}">Dashboard</a>
                 </li>
                         <li class="active">
                                 <i class='fa fa-automobile fa-1x'></i>  Queue service
@@ -44,42 +64,46 @@ $(document).ready(function(){
     <br><br>
     <form action="bookqueue/insert" method="post" class="form-horizontal">
         <div class="form-group">
-            <label for="License_plate" class="control-label col-md-3">ทะเบียนรถ <span class="text-danger">*</span></label>
+            <label for="License_plate" class="control-label col-md-3">เบอร์โทรศัพท์ <span class="text-danger">*</span></label>
                 <div class="col-md-3">
                     <div class="input-group">
-                        <span class="input-group-addon"><i class='fa fa-automobile fa-1x'></i></span>
-                            <input type="text" name="plateno" id="plateno" value="" class="form-control">
+                            <input type="text" name="phoneno" id="phoneno" value="" class="form-control">
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button" id="phonenumber"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </span>
                     </div>
                 </div>
         </div>
+        <input type="hidden" name="user_id" id="user_id" value="">
+
         <div class="form-group">
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"> 
-                <label for="order" class="control-label col-md-3">ยี่ห้อรถยนต์ <span class="text-danger">*</span></label>
+                <label for="order" class="control-label col-md-3">ทะเบียนรถ <span class="text-danger">*</span></label>
                     <div class="col-md-3">
-                        <input type="text" name="brand" id="brand" value="" class="form-control">
+                            <select name="plateno" id="plateno" class="form-control">
+                                <option id="plate" value="" selected="selected"></option>
+                            </select>
                     </div>
         </div>
+
+        <div class="form-group">
+            <label for="name" class="control-label col-md-3">ชื่อลูกค้า <span class="text-danger" >*</span></label>
+                <div class="col-md-3">
+                    <input type="text" name="customer_name" id="customer_name" class="form-control" disabled>
+                </div>
+        </div>
+
         <div class="form-group">
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"> 
                 <label for="order" class="control-label col-md-3">ล้างรถ <span class="text-danger">*</span></label>
                     <div class="col-md-3">
                         @foreach($service as $s)
-                            <input type="checkbox" name="service" id="service" value="{{$s->id}}"> {{$s->service_detail}} <br>
+                            <input type="checkbox" name="service[]" id="service" value="{{$s->id}}"> {{$s->service_detail}} <br>
                         @endforeach
                     </div>
         </div>
-        <div class="form-group">
-                <label for="name" class="control-label col-md-3">รหัสลูกค้า <span class="text-danger" >*</span></label>
-                    <div class="col-md-3">
-                        <input type="text" name="user" id="user" value="" class="form-control" placeholder="เบอร์โทรศัพท์">
-                    </div>
-        </div>
-        <div class="form-group">
-            <label for="name" class="control-label col-md-3">ชื่อลูกค้า <span class="text-danger" >*</span></label>
-                <div class="col-md-3">
-                    <input type="text" name="name" id="name" value="" class="form-control" placeholder="">
-                </div>
-        </div>
+       
+        
         <div class="form-group">
             <label for="date_time" class="control-label col-md-3">วันและเวลาที่ใช้บริการ <span class="text-danger">*</span></label>
                 <div class="col-md-3">

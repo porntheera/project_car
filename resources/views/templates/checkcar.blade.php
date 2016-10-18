@@ -8,7 +8,7 @@
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class='fa fa-home fa-1x'></i>  <a href="{{url('home')}}"> Dashboard</a>
+                                <i class='fa fa-home fa-1x'></i>  <a href="{{url('test')}}"> Dashboard</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-automobile fa-1x"></i> Check car

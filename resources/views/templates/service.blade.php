@@ -10,7 +10,7 @@
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class='fa fa-home fa-1x'></i>  <a href="{{url('home')}}">Dashboard</a>
+                                <i class='fa fa-home fa-1x'></i>  <a href="{{url('test')}}">Dashboard</a>
                             </li>
                             <li class="active">
                                 <i class='fa fa-automobile fa-1x'></i>  Service
@@ -32,7 +32,7 @@
 
                 <div class="row">
                     <div class="col-lg-4 text-center">
-                        <div class="panel panel-yellow">
+                        <div class="panel panel-green">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class='fa fa-automobile fa-1x'></i><strong> ล้างรถ</strong></h3>
                             </div>
@@ -44,14 +44,15 @@
                                 <br><strong>- ล้างเคลือบสี+ขัดสี</strong>
                                 <br><strong>- ล้างเคลือบสี+เคลือบเงา</strong>
                                 <br><strong>- ล้างห้องเครื่อง</strong>
-                                <strong>- รายเดือน</strong>
-                                <br><strong>- รายวัน</strong>                            
+                                    <div class="text-right">   
+                                        <img src="dfdfdf/img/car1.gif" alt="Computer man" style="width:120px;height:120px;">
+                                    </div>  
                             </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 text-center">
-                        <div class="panel panel-red">
+                        <div class="panel panel-yellow">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class='fa fa-automobile fa-1x'></i><strong> รับ-ฝากรถ</strong></h3>
                             </div>
@@ -59,6 +60,9 @@
                                 <div class="text-left">
                                 <strong>- รายเดือน</strong>
                                 <br><strong>- รายวัน</strong>   
+                                    <div class="text-right">   
+                                        <br><br><br><br><img src="dfdfdf/img/car3.gif" alt="Computer man" style="width:120px;height:120px;">
+                                    </div> 
                             </div>
                             </div>
                         </div>
@@ -68,13 +72,16 @@
 
 
                     <div class="col-lg-4 text-center">
-                       <div class="panel panel-green">
+                       <div class="panel panel-red">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class='fa fa-automobile fa-1x'></i><strong> ซ่อมรถ</strong></h3>
                             </div>
                             <div class="panel-body">
                                 <div class="text-left">
                                 <strong>- ซ่อมทุกรายการ</strong>
+                                    <div class="text-right">   
+                                        <br><br><br><br><br><img src="dfdfdf/img/car2.gif" alt="Computer man" style="width:120px;height:120px;">
+                                    </div>
                             </div>
                         </div>
                     </div>

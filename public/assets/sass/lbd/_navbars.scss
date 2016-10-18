@@ -132,7 +132,7 @@
     }
     .btn-default.btn-fill{
         color: $dark-gray;
-        background-color: $white-color;
+        background-color: #80496c;
         @include opacity(.9);
     }
     .btn-default.btn-fill:hover, 
@@ -157,7 +157,7 @@
 }
 
 .navbar-default {
-    background-color: $white-navbar;
+    background-color: $#f2dede;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   
     .navbar-nav{
